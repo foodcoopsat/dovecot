@@ -1,5 +1,5 @@
 # Newer versions have a problem with OAuth2 login
-FROM alpine:3.14
+FROM alpine:3.17
 
 RUN apk add --no-cache \
     dovecot dovecot-lmtpd dovecot-pop3d dovecot-submissiond dovecot-pgsql \
