@@ -1,0 +1,4 @@
+#!/bin/sh
+
+source /etc/dovecot/rspamc-sieve.conf.sh
+exec /usr/bin/rspamc -h ${RSPAMD_CONTROL_ADDRESS} -d "$USER" $@
