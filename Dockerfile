@@ -10,5 +10,8 @@ RUN apk add --no-cache \
 
 COPY --chown=mail:mail sieve/*.sieve /usr/lib/dovecot/sieve/
 COPY --chown=mail:mail sieve-execute/* /usr/lib/dovecot/sieve-execute/
+RUN sievec /usr/lib/dovecot/sieve/before.sieve \
+    && sievec /usr/lib/dovecot/sieve/after.sieve
+
 
 CMD ["dovecot", "-F"]
